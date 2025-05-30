@@ -24,7 +24,7 @@ export class Triangle implements Figure {
       (side1, side2) => side1 - side2,
     );
 
-    if (sortedSides[0] < 0) {
+    if (sortedSides[0] <= 0) {
       throw new Error(`length of all the sides must be greater than 0`);
     }
 
@@ -57,7 +57,7 @@ export class Circle implements Figure {
   }
 
   private validateRadius(): void {
-    if (this.radius < 0) {
+    if (this.radius <= 0) {
       throw new Error(`radius must be greater than 0`);
     }
   }
@@ -79,7 +79,7 @@ export class Rectangle implements Figure {
   }
 
   private validateSides(): void {
-    if (this.width < 0 || this.height < 0) {
+    if (this.width <= 0 || this.height <= 0) {
       throw new Error(`length of all the sides must be greater than 0`);
     }
   }
